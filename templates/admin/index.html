@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'admin/css/admin.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+<div class="dashboard" style="padding:20px;">
+    <h1>Welcome to Knot & Crafts Dashboard</h1>
+    <p style="font-size:16px;">
+        Manage products, categories and customer messages easily.
+    </p>
+
+    <div style="margin-top:30px; display:flex; gap:20px;">
+        <div style="padding:20px; border:1px solid #ddd; border-radius:10px; width:250px;">
+            <h3>Products</h3>
+            <p>View and manage your handmade items.</p>
+            <a href="/admin/crafts/product/" style="text-decoration:none;">Manage Products →</a>
+        </div>
+
+        <div style="padding:20px; border:1px solid #ddd; border-radius:10px; width:250px;">
+            <h3>Categories</h3>
+            <a href="/admin/crafts/category/" style="text-decoration:none;">Manage Categories →</a>
+        </div>
+
+        <div style="padding:20px; border:1px solid #ddd; border-radius:10px; width:250px;">
+            <h3>Messages</h3>
+            <a href="/admin/crafts/contactmessage/" style="text-decoration:none;">View Messages →</a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

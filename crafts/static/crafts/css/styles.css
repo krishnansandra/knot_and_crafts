@@ -1,0 +1,20 @@
+/* base styles adapted from your original HTML */
+body { margin:0; font-family: Arial, sans-serif; background: #faf7f2; color:#333 }
+.site-header { background:#d9a7c7; padding:20px; text-align:center; color:white; font-size:28px }
+.site-nav { display:flex; justify-content:center; background:#f2e6e6; padding:10px }
+.site-nav a{ margin:0 15px; text-decoration:none; color:#333; font-weight:bold }
+.hero { text-align:center; padding:30px }
+.hero img{ width:90%; max-width:450px; border-radius:10px; transition: transform .4s }
+.hero img:hover{ transform: scale(1.02) }
+.section { padding:20px; text-align:center }
+.products { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px }
+.card { background:white; padding:15px; border-radius:12px; box-shadow: 0 4px 10px rgba(0,0,0,.1) }
+.card img{ width:100%; height:160px; object-fit:cover; border-radius:8px }
+.btn{ display:inline-block; margin-top:8px; padding:8px 12px; background:#d9a7c7; color:white; border-radius:6px; text-decoration:none }
+.site-footer{ background:#d9a7c7; color:white; text-align:center; padding:12px; margin-top:20px }
+
+/* small animation */
+.card{ transform: translateY(0); transition: transform .25s ease, box-shadow .25s }
+.card:hover{ transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,.15) }
+
+@media (max-width:600px){ .site-nav{ flex-wrap:wrap } }

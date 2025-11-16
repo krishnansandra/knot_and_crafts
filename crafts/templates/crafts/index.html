@@ -1,0 +1,30 @@
+{% extends 'crafts/base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero">
+  <h2>Handmade With Love</h2>
+  <p>Unique craft items made personally by me.</p>
+  <img src="{% static 'crafts/images/l1.jpg' %}" alt="Craft Image" />
+</section>
+
+<section class="section" id="products">
+  <h2>Our Products</h2>
+  <div class="products">
+    {% for p in product %}
+      <article class="card" data-aos="fade-up">
+
+        {% if p.image %}
+          <img src="{{ p.image.url }}" alt="{{ p.title }}">
+        {% else %}
+          <img src="{% static 'crafts/images/l1.jpg' %}" alt="{{ p.title }}">
+        {% endif %}
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description|truncatechars:100 }}</p>
+        <a class="btn" href="{% url 'crafts:product_detail' p.slug %}">View</a>
+      </article>
+    {% empty %}
+      <p>No products yet. Add some from the admin panel.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

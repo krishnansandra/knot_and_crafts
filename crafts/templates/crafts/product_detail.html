@@ -1,0 +1,28 @@
+{% extends 'crafts/base.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'crafts/css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+<section class="detail-section" data-aos="fade-up">
+  <div class="detail-container">
+    <div class="detail-image">
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+      {% else %}
+        <img src="{% static 'crafts/images/l1.jpg' %}" alt="{{ product.title }}">
+      {% endif %}
+    </div>
+
+    <div class="detail-content">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+
+      <a href="{% url 'crafts:products' %}" class="btn">Back to Products</a>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %}

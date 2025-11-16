@@ -1,0 +1,30 @@
+{% extends 'crafts/base.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'admin/css/admin.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<section class="section">
+  <h2>{{ view.object|default:"Add Product" }}</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div>
+      {{ form.title.label_tag }}<br>{{ form.title }}
+    </div>
+    <div>
+      {{ form.category.label_tag }}<br>{{ form.category }}
+    </div>
+    <div>
+      {{ form.description.label_tag }}<br>{{ form.description }}
+    </div>
+    <div>
+      {{ form.image.label_tag }}<br>{{ form.image }}
+    </div>
+    <button class="btn" type="submit">Save</button>
+  </form>
+</section>
+</div>
+{% endblock %}

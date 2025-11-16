@@ -1,0 +1,88 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'admin/css/custom.css' %}">
+<style>
+.dashboard-container {
+    padding: 30px;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 20px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform .2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+}
+
+.dashboard-card h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #d48cba;
+}
+
+.dashboard-card p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #d9a7c7;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.dashboard-btn:hover {
+    background: #c58ab1;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+
+    <h1 style="color:#d48cba;">✨ Knot & Crafts Admin Dashboard</h1>
+    <p style="font-size:16px;">Manage everything from one clean dashboard.</p>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <h2>{{ total_products }}</h2>
+            <p>Total Products</p>
+            <a class="dashboard-btn" href="/admin/crafts/product/">Manage Products</a>
+            <br><br>
+            <a class="dashboard-btn" href="/admin/crafts/product/add/">Add New Product</a>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>{{ total_categories }}</h2>
+            <p>Total Categories</p>
+            <a class="dashboard-btn" href="/admin/crafts/category/">Manage Categories</a>
+             <br><br>
+            <a class="dashboard-btn" href="/admin/crafts/category/add/">Add New Categories</a>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>{{ total_messages }}</h2>
+            <p>Customer Messages</p>
+            <a class="dashboard-btn" href="/admin/crafts/contactmessage/">View Messages</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

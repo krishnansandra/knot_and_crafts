@@ -1,0 +1,115 @@
+/* ===========================
+   GLOBAL ADMIN STYLING
+   =========================== */
+
+:root {
+    --pink: #d9a7c7;
+    --light-bg: #faf7f2;
+    --soft-text: #444;
+}
+
+/* Page background */
+body, #container {
+    background: var(--light-bg) !important;
+}
+
+/* Header bar */
+#header {
+    background: var(--pink) !important;
+    color: white !important;
+    padding: 12px 20px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Header title */
+#site-name a {
+    color: white !important;
+    font-size: 22px !important;
+    font-weight: bold;
+}
+
+/* Module table */
+.module, .module caption, .module table {
+    background: white !important;
+    border-radius: 12px !important;
+    border: 1px solid #e5d7e0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* Table rows */
+#result_list tbody tr {
+    background: #fff;
+    transition: background 0.2s;
+}
+
+#result_list tbody tr:hover {
+    background: #f6eef4;
+}
+
+/* Buttons */
+.button, .submit-row input.default,
+.addlink, .changelink {
+    background: var(--pink) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    border: none !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.submit-row input.default:hover {
+    background: #cc97ba !important;
+}
+
+/* Sidebar filter panel */
+#changelist-filter {
+    background: white !important;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+#changelist-filter h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+/* Active filter */
+#changelist-filter .selected {
+    background: #f6eef4;
+    border-left: 5px solid var(--pink);
+    padding-left: 6px;
+}
+
+/* Forms */
+fieldset {
+    border-radius: 12px !important;
+    padding: 20px !important;
+    border-color: #e5d7e0 !important;
+}
+
+/* Labels */
+label {
+    font-weight: bold !important;
+    color: var(--soft-text) !important;
+}
+
+/* Inputs */
+input, select, textarea {
+    border-radius: 6px !important;
+    border: 1px solid #d0c2c9 !important;
+    padding: 8px !important;
+}
+
+/* Save / Delete buttons row */
+.submit-row {
+    background: white !important;
+    border-top: 1px solid #eee;
+    padding: 20px !important;
+    border-radius: 0 0 12px 12px !important;
+}

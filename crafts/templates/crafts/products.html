@@ -1,0 +1,43 @@
+{% extends 'crafts/base.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'crafts/css/styles.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<form method="get" class="search-form">
+  <input type="text" name="q" placeholder="Search products..." value="{{ request.GET.q }}">
+  <select name="category">
+    <option value="">All categories</option>
+    {% for c in categories %}
+      <option value="{{ c.slug }}" {% if request.GET.category == c.slug %}selected{% endif %}>{{ c.name }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit" class="btn">Search</button>
+</form>
+
+
+<section class="section">
+  <h2 class="section-title">All Products</h2>
+
+ <div class="products">
+  {% for p in products %}
+    <article class="card" data-aos="fade-up">
+      {% if p.image %}
+        <img src="{{ p.image.url }}" alt="{{ p.title }}">
+      {% else %}
+        <img src="{% static 'crafts/images/l1.jpg' %}" alt="{{ p.title }}">
+      {% endif %}
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description|truncatechars:100 }}</p>
+      <a class="btn" href="{% url 'crafts:product_detail' p.slug %}">View Details</a>
+    </article>
+  {% empty %}
+    <p>No products available.</p>
+  {% endfor %}
+</div>
+
+</section>
+
+{% endblock %}

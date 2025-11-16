@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knot & Crafts</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{% static 'crafts/css/styles.css' %}">
+
+  <!-- Allow child templates to inject extra CSS -->
+  {% block extrastyle %}{% endblock %}
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    });
+  </script>
+
+  <script defer src="{% static 'crafts/js/main.js' %}"></script>
+</head>
+<body>
+  <header class="site-header">Knot & Crafts</header>
+
+  <nav class="site-nav">
+    <a href="{% url 'crafts:index' %}">Home</a>
+    <a href="{% url 'crafts:products' %}">Products</a>
+    <a href="{% url 'crafts:contact' %}">Contact</a>
+  </nav>
+
+  <main class="site-main">
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">© {{ now|date:"Y" }} Knot & Crafts</footer>
+</body>
+</html>

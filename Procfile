@@ -1,0 +1,1 @@
+web: gunicorn knot_and_crafts.wsgi --log-file -

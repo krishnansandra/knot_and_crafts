@@ -1,0 +1,100 @@
+/* subtle branding + larger font for admin headings */
+#header {
+  background: linear-gradient(90deg, #d48c70, #f2c7b3);
+}
+#branding h1, #branding a {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #fff;
+}
+.module th, .module caption {
+  font-weight: 600;
+}
+.change-form h1 {
+  font-size: 1.6rem;
+}
+
+
+
+
+/* Smooth table styling */
+#changelist table {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+    font-size: 15px;
+}
+
+/* Header */
+#changelist table thead th {
+    background: #f7f7f7;
+    padding: 12px 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Rounded row style */
+#changelist table tbody tr {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Table cells */
+#changelist table tbody td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+/* Hover row */
+#changelist table tbody tr:hover {
+    background: #f9fafb;
+    transform: scale(1.01);
+    transition: 0.15s ease-in-out;
+}
+
+/* Image column fix */
+.column-thumbnail {
+    width: 80px;
+}
+
+
+
+/* Sidebar filter box */
+#changelist-filter {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+    margin-top: 15px;
+}
+
+/* Title */
+#changelist-filter h2 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+/* Filter list */
+#changelist-filter .filter-choice,
+#changelist-filter ul li {
+    padding: 8px 4px;
+    margin: 4px 0;
+    border-radius: 6px;
+}
+
+/* Highlight active filter */
+#changelist-filter .selected {
+    background: #f0f7ff;
+    border-left: 4px solid #007bff;
+    padding-left: 8px;
+}
+
+/* Hover effect */
+#changelist-filter a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
