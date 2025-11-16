@@ -1,1 +1,1 @@
-web: gunicorn knot_and_crafts.wsgi --log-file -
+web: gunicorn knot_and_crafts.wsgi:application --log-file -

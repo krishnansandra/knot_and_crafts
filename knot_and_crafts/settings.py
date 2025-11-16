@@ -1,16 +1,25 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'replace-this-with-a-secure-key')
+import os
 
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')  # change local default
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '.onrender.com'
+]
+
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,11 +64,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'knot_and_crafts.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default='sqlite:///{}'.format(BASE_DIR / 'db.sqlite3'))
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
