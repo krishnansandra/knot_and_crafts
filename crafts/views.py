@@ -108,7 +108,7 @@ def contact(request):
 
 def admin_products(request):
     products = Product.objects.all()
-    product_count = products.count()  # total count
+    product_count = products.count()
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -119,12 +119,11 @@ def admin_products(request):
     else:
         form = ProductForm()
 
-    context = {
+    return render(request, 'crafts/admin_products.html', {
         'products': products,
         'product_count': product_count,
         'form': form
-    }
-    return render(request, 'admin/admin_products.html', context)
+    })
 
 
 

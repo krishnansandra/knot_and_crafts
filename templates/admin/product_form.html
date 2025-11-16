@@ -23,7 +23,12 @@
     <div>
       {{ form.image.label_tag }}<br>{{ form.image }}
     </div>
+    {{ form.as_p }}
+
     <button class="btn" type="submit">Save</button>
+    {% if form.errors %}
+        <p style="color:red;">{{ form.errors }}</p>
+    {% endif %}
   </form>
 </section>
 </div>

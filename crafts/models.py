@@ -30,7 +30,8 @@ class Product(models.Model):
                 slug = f"{base}-{i}"
                 i += 1
             self.slug = slug
-        super().save(*args, **kwargs)
+
+        super().save(*args, **kwargs)   # DON'T return anything
 
 class ContactMessage(models.Model):
     name = models.CharField(max_length=120)
