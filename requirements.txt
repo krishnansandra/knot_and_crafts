@@ -7,3 +7,4 @@ python-dotenv
 Pillow
 whitenoise
 aiohappyeyeballs==2.6.1
+dj-database-url
