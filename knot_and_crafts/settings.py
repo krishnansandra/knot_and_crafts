@@ -1,9 +1,12 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+
 import dj_database_url
 
+
+from dotenv import load_dotenv
 load_dotenv()
+
 
 import cloudinary
 import cloudinary.uploader
@@ -41,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crafts',
-     'cloudinary',
+    'cloudinary',
     'cloudinary_storage',
 ]
 
